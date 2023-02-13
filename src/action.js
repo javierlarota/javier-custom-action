@@ -3,7 +3,7 @@ const github = require('@actions/github');
 const { spawn } = require('child_process');
 
 async function run() {
-    const command = spawn('sudo apt-get update -y && sudo apt-get install -y cloc');
+    const command = spawn('apt-get update -y && apt-get install -y cloc');
 
     command.stdout.on('data', (data) => {
         console.log(`stdout: ${data}`);
