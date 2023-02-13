@@ -9613,6 +9613,14 @@ module.exports = require("assert");
 
 /***/ }),
 
+/***/ 2081:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("child_process");
+
+/***/ }),
+
 /***/ 6113:
 /***/ ((module) => {
 
@@ -9658,14 +9666,6 @@ module.exports = require("https");
 
 "use strict";
 module.exports = require("net");
-
-/***/ }),
-
-/***/ 7718:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:child_process");
 
 /***/ }),
 
@@ -9784,7 +9784,7 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(2186);
 const github = __nccwpck_require__(5438);
-const { spawn } = __nccwpck_require__(7718);
+const { spawn } = __nccwpck_require__(2081);
 
 async function run() {
     const command = spawn('sudo apt-get update -y && sudo apt-get install -y cloc');

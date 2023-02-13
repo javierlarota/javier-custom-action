@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const { spawn } = require('node:child_process');
+const { spawn } = require('child_process');
 
 async function run() {
     const command = spawn('sudo apt-get update -y && sudo apt-get install -y cloc');
