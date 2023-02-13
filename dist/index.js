@@ -13053,7 +13053,7 @@ const github = __nccwpck_require__(5438);
 const cloc = __nccwpck_require__(7448)
 
 async function run() {
-    cloc('/my/folder').then((res) => console.log(res), (err) => console.log(err))
+    cloc('.').then((res) => console.log(res), (err) => console.log(err))
 }
 
 run();
