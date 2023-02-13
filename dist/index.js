@@ -9787,7 +9787,7 @@ const github = __nccwpck_require__(5438);
 const { spawn } = __nccwpck_require__(2081);
 
 async function run() {
-    const command = spawn('apt-get update -y && apt-get install -y cloc');
+    const command = spawn('pwd');
 
     command.stdout.on('data', (data) => {
         console.log(`stdout: ${data}`);
