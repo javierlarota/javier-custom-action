@@ -1,8 +1,21 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const spawn = require('node:child_process');
 
 async function run() {
-    console.log('Hello, world!');
+    const command = spawn('sudo apt-get update -y && sudo apt-get install -y cloc');
+
+    command.stdout.on('data', (data) => {
+        console.log(`stdout: ${data}`);
+    });
+
+    command.stderr.on('data', (data) => {
+        console.error(`stderr: ${data}`);
+    });   
+    command.on('close', (code) => {
+        console.log(`child process exited with code ${code}`);
+    });    
+    
     const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
     const octokit = github.getOctokit(GITHUB_TOKEN);
 
